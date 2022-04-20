@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root
+{
+    --cor1: #f95b11;
+    --cor2: #fff;
+    --cor3: #000;
+    --cor4: #f42f1d;
+    --cor5: limegreen;  
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+html 
+{
+    font-size: 65%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+    overflow-x: hidden;
+}
+
+html :-webkit-scrollbar {
+    width: 1rem;
+}
+
+html :-webkit-scrollbar-thumb {
+    background: var(--cor4);
+}
+section
+{
+    padding: 4rem 9%;
+    margin-top: 8rem;
+}
+section h3 
+{
+    font-size: 3rem;
+    color: var(--cor2);
+    text-transform: none;
+    text-align: center;
+    letter-spacing: .2rem;
+}
+
+section p
+{
+    color: var(--cor2);
+    font-size: 1.5rem;  
+    text-transform: capitalize;
+    line-height: 2.5rem;
+    word-wrap: normal;
+}
+/*section h4
+{
+    margin: 0 0 1rem 25rem;
+    padding: .2rem;
+    width: 50%;
+    font-size: 3rem;
+    color: var(--cor2);
+    text-transform: none;
+    text-align: center;
+    align-items: center;
+    letter-spacing: .2rem;
+    background:var(--cor4) ;
+
+}*/
+
+
+.head
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    background: var(--cor4);
+    color: var(--cor2);
+    padding: 3rem 9%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head h1 
+{
+    font-size: 2.5rem;
+}
+
+.head .fa-pizza-slice
+{
+    animation: icon 5s ease infinite;
+}
+@keyframes icon
+{
+    25% {
+        transform: translateY(-1.5rem);
+    }
+
+    50% {
+        transform: traslateY(1.5rem);
+    }
+}
+.head .navbar a 
+{
+    color: var(--cor2);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 2rem;
+}
+.head .navbar a:hover 
+{
+    color: var(--cor3);
+    transition: .4s ease;
+}
+.head .side-bar i
+{
+    padding: 1.5rem;
+    font-size: 2.1rem;
+    border: none;
+    background: var(--cor2);
+    color: var(--cor4); 
+}
+.head .side-bar i:hover 
+{
+    background: var(--cor3);
+    color: var(--cor4);
+    transition: .4s ease;
+}
+
+#bars 
+{
+    display: none;
+}
+
+.barra-busca
+{
+    height: 7rem;
+    padding: 0 1rem;
+    display: flex;
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    right: 0;
+    align-items: center;
+    background: var(--cor3);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 0 0);
+}
+
+.barra-busca input
+{
+    width: 100%;
+    background: none;
+    border: hidden;
+    text-transform: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.barra-busca.active {
+    border: hidden;
+    transition: .6s ease;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+/*-------- secao inicio -----------*/
+.inicio 
+{
+    height: 100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url(img/fundo.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.conteudo-inicio
+{
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr;
+}
+.conteudo-interno i 
+{
+    color: var(--cor4);
+}
+.conteudo-interno
+{
+    max-width: 70rem;
+    margin-top: 20rem;
+    text-align: center;
+}
+
+.conteudo-interno-img {
+    margin-top: 2rem;
+}
+
+.conteudo-interno-img img 
+{
+    width: 45rem;
+    height: auto;
+    animation: icon 5s ease infinite;
+}
+
+
+
+/*--------- media query -----------*/
+@media(max-width:990px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem;
+    } 
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+}
+@media (max-width:758px)
+{
+    #bars {
+        display: inline-block;
+    }
+    .barra-busca input {
+        width: 100%;
+    }
+    .head .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        background: var(--cor3);
+        font-size: 2rem;
+    }
+
+    .head .navbar a 
+    {
+        margin: 2rem 2.5rem;
+        display: block;
+        border-right: .1rem solid var(--cor4);
+    }
+    .head .navbar a:hover {
+        transform: translateX(2rem);
+    }
+    .head .navbar.active
+    {
+        right: .5rem;
+        transition: .4s ease-in;
+    }
+}

@@ -4,15 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Nino Pizza</title>
 </head>
 
 <body>
+    <header class="head">
+        <h1>Nino&nbsp;<i class="fas fa-pizza-slice"></i>&nbsp;Pizza</h1>
+        <nav class="navbar">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Servicos</a>
+            <a href="#menu">Menu</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="side-bar">  
+            <i class="fas fa-search" id="buscar"></i>
+            <i class="fa fa-user" id="usuario"></i>
+            <i class="fas fa-bars" id="bars"></i>
+        </div>
+        <form action="#" class="barra-busca">
+            <input type="search" name="procurar" id="1" placeholder="Procure aqui">
+        </form>
+    </header>
 
 
-    
-    
+    <!--------------- Secao INICIO ---------------->
+    <section class="inicio" id="inicio">
+        <div class="conteudo-incio">
+            <div class="conteudo-interno">
+                <h3>Bem vindo ao Nino&nbsp;<i class="fas fa-pizza-slice"></i>&nbsp;Pizza</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                <button class="btn">Menu</button>
+            </div>
+            <div class="conteudo-interno-img">
+                <img src="img/pizza-conteudo-interno.png">
+            </div>
+        </div>
+
+    </section>
+     
+    <!-----------------script ;D------------------->
+    <script>
+        let buscarbtn = document.querySelector('#buscar');
+        let buscarfrm = document.querySelector('.head .barra-busca');
+        
+        buscarbtn.onclick = () => {
+            buscarfrm.classList.toggle('active');
+        }
+
+        let menu = document.querySelector('.head .navbar');
+        document.querySelector('#bars').onclick = () => {
+            menu.classList.toggle('active');
+            buscarfrm.classList.remove('active');
+        }
+        
+    </script>
 </body>
 </html>
